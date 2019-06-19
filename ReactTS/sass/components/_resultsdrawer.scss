@@ -1,0 +1,21 @@
+.resultsdrawer{
+    position:absolute;
+    z-index: 99;
+    top:14vh;
+    right:0;
+    padding:15px 15px 0px 15px;
+    width:39vw;
+    height:84vh;
+    background-color:$color-light-gray;
+   
+}
+
+.scroll{
+    width:36vw;
+    height:82vh;
+    overflow-y: scroll;
+}
+
+.cardList{
+    padding-bottom:308px;
+}

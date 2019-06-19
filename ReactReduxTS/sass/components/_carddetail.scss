@@ -1,0 +1,134 @@
+.carddetail{
+    width:100%;
+    background-color:#fff;
+    position:absolute;
+    z-index: 999999;
+
+    &-header{
+        background-color: #fff;
+        color:#fff;
+        height: 25vh;
+        border-bottom:1px solid #ccc;
+    }
+    .BackNav{
+        color: #4A6774;
+        font-size:1.7em;
+    }
+    .BackNav .arrow{
+        font-size:2em;
+        position: relative;
+        top: 10px;
+        color:#4A6774;
+    }
+    .footer{
+        background-color: #4A6774;
+        color:#fff;
+        padding:40px 80px;
+        font-size:.9em;
+        line-height: 1.4em;
+    }
+
+    .modules{
+        width:100vw;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .module{
+        width:50vw;
+        padding: 20px;
+    }
+    .section-title{
+        color:$color-primary-dark;
+        font-size:30px;
+    }
+    .entry{
+        padding: 20px;
+        border-bottom:1px solid #ccc;
+    }
+    .carddetail-header .entry{
+        padding: 0px 0px 0px 20px;
+        border-bottom:0px solid #ccc;
+    }
+    .branding{
+        width:160px;
+    }
+    .branding img {
+        height: auto;
+        width: 100%;
+    }
+    .single_image .imagesGroup{
+        
+        position: relative;
+        overflow: hidden;
+    }
+    .single_image img{
+       height:auto;
+       width:100%;
+       
+    }
+    .gallery .imagesGroup{
+        max-width:45vw;
+        display:flex;
+        flex-wrap:wrap;
+        flex-direction:row;
+    }
+   
+    .gallery .imagesGroup .image{
+        position: relative;
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
+        margin:5px;
+    }
+    .gallery .imagesGroup img{
+      
+        position: relative;
+        left: 50%;
+        top: 50%;
+        height: 100%;
+        width: auto;
+        -webkit-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+    }
+
+    .modal {
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      .modal img{
+          width:100%;
+          height:auto;
+      }
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+      
+      /* The Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+}
