@@ -1,12 +1,14 @@
-import { createStore, combineReducers } from 'redux';
-import {
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from '../redux/Reducers';
+/*import {
 	clientStateReducer,
 	dataReducer,
 	searchbarReducer,
 	globalStateReducer,
 	safeDataReducer,
 	sortDataReducer
-} from 'store/new/reducer';
+} from 'store/new/reducer';*//*
 import {
 	GlobalState,
 	DataState,
@@ -24,6 +26,7 @@ export interface RootState {
 	searchBar: SearchBarState;
 	appPrefs: GlobalState;
 }
+
 const rootReducer = combineReducers({
 	normalData: safeDataReducer,
 	sortedData:sortDataReducer,
@@ -32,7 +35,10 @@ const rootReducer = combineReducers({
 	searchBar: searchbarReducer,
 	appPrefs: globalStateReducer
 });
+*/
 // <RootState, any, any, any>
-const store = createStore(rootReducer);
+export type AppState = ReturnType<typeof rootReducer>;
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;

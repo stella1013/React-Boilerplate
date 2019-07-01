@@ -168,41 +168,9 @@ export enum ScreenTypes {
 	SPLASH_SCREEN = 'SPLASHSCREEN',
 	MAP_SCREEN = 'MAPSCREEN'
 }
-export type SearchBarActions = ActionType<
-	| typeof actions.updateSearchFields
-	| typeof actions.getFormPresetsFrmServer
-	| typeof actions.getData
-	| typeof actions.getInitialData
-	| typeof actions.verifyFields
->;
 
 export type DataActions = ActionType<
 	| typeof actions.dataReceived
 	| typeof actions.dataError
-	| typeof actions.normalizeData
-	| typeof actions.getSortedData
->;
 
-export type DefaultActions = ActionType<
-	| typeof actions.setDefaultZoomType
-	| typeof actions.setDefaultZoomLevel
-	| typeof actions.setDefaultDataSortType
-	| typeof actions.setAppTitle
->;
-
-export type NavActions = ActionType<
-	| typeof actions.changeView
-	| typeof actions.selectMarker
-	| typeof actions.selectCard
-	| typeof actions.selectFacilityID
-	| typeof actions.selectSearchType
-	| typeof actions.updateScrollYPos
-	| typeof actions.showHidePopover
-	| typeof actions.changemarkerselectionstatus
-	| typeof actions.setDataSortType
-	| typeof actions.updatePremiumLocations
-	| typeof actions.changeZoomType
-	| typeof actions.changeZoomLevel
-	| typeof actions.changeLoadingStatus
-	| typeof actions.showAlert
 >;

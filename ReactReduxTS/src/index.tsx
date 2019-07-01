@@ -2,11 +2,11 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import store from './store/new/store';
+import store from './store/store';
 
 import 'index.css';
 import 'style.css';
-import App from 'containers/App';
+import App from 'views/containers/App';
 import * as serviceWorker from 'serviceWorker';
 
 // tslint:disable-next-line:max-line-length

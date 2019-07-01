@@ -3,7 +3,7 @@
   "rules": {
     "align": [true, "parameters", "arguments", "statements"],
     "ban": false,
-    "class-name": true,
+    "class-name": false,
     "comment-format": [true, "check-space"],
     "curly": true,
     "eofline": false,
