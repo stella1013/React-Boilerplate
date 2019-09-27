@@ -1,34 +1,31 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import * as Loadable from 'react-loadable';
-import { AppState } from '../../store/store';
+import { AppState } from 'redux/store';
+import { 
+	clientStateSelectors// , 
+	// clientStateOperations 
+} from 'redux/ClientState';
 import Loading from 'views/components/UI/Loading';
-import { dataOperations } from 'redux/Data';
-import { clientStateSelectors } from 'redux/ClientState';
-
-/* 
-TODO:
--Add form validation
--unloading components when searching while mapscreen is up causes error
-*/
+// import { faEnvelope, faKey, faCode, faPlayCircle, faImages } from '@fortawesome/free-solid-svg-icons';
 
 const LoadableSplashScreenComponent = Loadable({
 	loader: () => import('./SplashScreen'),
 	loading: Loading
 });
 const LoadableMapScreenComponent = Loadable({
-	loader: () => import('./MapScreen'),
+	loader: () => import('./AnotherPage'),
 	loading: Loading
 });
 
 class App extends React.Component<ReduxType> {
 	componentDidMount() {
-		this.props.fetchData();
+		// this.props.fetchData();
 	}
 
 	render() {
 		let currentView = <LoadableSplashScreenComponent />;
-		if (this.props.appState.selectedView === 'SPLASHSCREEN') {
+		if (this.props.clientState.selectedView === 'SPLASHSCREEN') {
 			currentView = <LoadableSplashScreenComponent />;
 		} else {
 			currentView = <LoadableMapScreenComponent />;
@@ -47,30 +44,11 @@ type ReduxType = ReturnType<typeof mapStateToProps> &
 
 const mapStateToProps = (state: AppState) => {
 	return {
-		// data: dataSelectors.getDataSelector(state),
-		// newData: dataSelectors.normalizedDataSelector(state),
-		// appPrefs: appPrefsSelectors.getAppPrefsSelectorMemo(state),
-		appState: clientStateSelectors.getClientStateSelectorMemo(state)
-		// sBar: searchBarSelectors.searchBarStateSelector(state),
-		// isReady: searchBarSelectors.isReadySelector(state),
-		// categories: state.categoryData.searchformdata
+		clientState: clientStateSelectors.getClientStateSelectorMemo(state)
 	};
 };
 const mapDispatchToProps = (dispatch: any) => {
 	return {
-		fetchData: () => dispatch(dataOperations.fetchData())
-		/* changeLoadingStatus: (isLoading: boolean) =>
-			dispatch(clientStateOperations.changeLoadingStatus(isLoading)),*/
-		// getInitialData: () => dispatch(searchBarOperations.getInitialData()),
-		/* getFormPresetsFrmServer: (data: []) =>
-			dispatch(searchBarOperations.getFormPresetsFrmServer(data)),*/
-		/* getData: (request: DataRequestTypes, callback: any) =>
-			dispatch(searchBarOperations.getData(request, callback)),*/
-		/* updateSearchFields: (selectedValue: {
-			displayValue: string;
-			value: string;
-			id: string;
-		}) => dispatch(searchBarOperations.updateSearchFields(selectedValue)),*/
 		/* changeView: (view?: ScreenTypes | undefined) =>
 			dispatch(clientStateOperations.changeView(view))*/
 	};
